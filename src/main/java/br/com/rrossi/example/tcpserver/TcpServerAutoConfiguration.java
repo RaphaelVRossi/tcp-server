@@ -1,6 +1,7 @@
 package br.com.rrossi.example.tcpserver;
 
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -23,5 +24,10 @@ public class TcpServerAutoConfiguration {
     @Bean
     Server server() {
         return new TcpServer();
+    }
+
+    @Bean
+    ThreadPoolBean threadPoolBean() {
+        return new ThreadPoolBean();
     }
 }
